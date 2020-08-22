@@ -5,10 +5,10 @@ import numpy as np
 
 
 
-class obs_wrap(nn.Module):
+class ObsWrap(nn.Module):
     
     def __init__(self):
-        super(obs_wrap, self).__init__()
+        super(ObsWrap, self).__init__()
 
         #cnn pass, stack, fc    
         self.conv1 = nn.Conv2d(3, 10, 7)
@@ -19,7 +19,7 @@ class obs_wrap(nn.Module):
         self.fc2 = nn.Linear(128, 64)
         self.fc3 = nn.Linear(128, 64)
         
-    def forward(self, obs, from_env = 1):
+    def forward(self, obs, from_env = 0):
         if from_env:
             pov = np.transpose(obs['pov']) #(TODO: transpose DOESNOT solve the 64x64x3 to 3x64x64 issue!)
             pov = torch.from_numpy(pov)
