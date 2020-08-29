@@ -8,7 +8,9 @@ def main():
     env = gym.make('MineRLTreechopVectorObf-v0')
     config = Config()
     exe = Execute(env, config)
-    exe.train()
+    for i in range(1000):
+        exe.train_step()
+    exe.save_model()
 
 if __name__ == '__main__':
     
