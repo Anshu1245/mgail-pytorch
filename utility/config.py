@@ -20,7 +20,7 @@ class Config:
         self.action_size = 64
         self.action_space = np.asarray([None]*self.action_size)
 
-        # Main parameters to play with:
+        # Main parameters to play with:al_loss
         self.er_agent_size = 50000
         self.prep_time = 1000
         self.collect_experience_interval = 15
@@ -31,7 +31,7 @@ class Config:
         self.weight_decay = 1e-7
         self.policy_al_w = 1e-2
         self.policy_tr_w = 1e-4
-        self.policy_accum_steps = 7
+        self.policy_accum_steps = 10
         self.total_trans_err_allowed = 1000
         self.temp = 1.
         self.cost_sensitive_weight = 0.8

@@ -23,7 +23,7 @@ class Discriminator(nn.Module):
 
 
     def forward(self, s, a):
-        x = torch.cat((s, a), 0)
+        x = torch.cat((s, a), 1)
         x = F.relu(self.fc1(x))
         x = F.dropout(F.relu(self.fc2(x)), p=self.drop, training = self.is_training)
         x = self.fc3(x)  # softmax? 
@@ -76,6 +76,45 @@ class ForwardModel(nn.Module):
         super(ForwardModel, self).__init__()
         self.s_size = s_size
         self.a_size = a_size
+        self.encod_size = encod_size
+        self.lr = lr
+
+        # arch
+        # state embedders
+        self.s_embed1 = nn.Linear(self.s_size, self.encod_size)
+        self.gru = nn.GRUCell(self.encod_size, self.encod_size)
+        self.s_embed2 = nn.Linear(self.encod_size, self.encod_size)
+
+        # action embedders
+        self.a_embed1 = nn.Linear(self.a_size, self.encod_size)
+        self.a_embed2 = nn.Linear(self.encod_size, self.encod_size)
+
+        # preds
+        self.fc1 = nn.Linear(self.encod_size, self.encod_size)
+        self.fc2 = nn.Linear(self.encod_size, self.encod_size)
+        self.fc3 = nn.Linear(self.encod_size, self.encod_size)
+        self.fc4 = nn.Linear(self.encod_size, self.s_size)
+
+    def forward(self, input):
+        state = input[0]
+        action = input[1]
+        gru_state = input[2]
+
+        s_embed = F.relu(self.s_embed1(state))
+        gru_state = self.gru(s_embed, gru_state)
+        s_embed = F.sigmoid(self.s_embed2(gru_state))
+
+        a_embed = F.relu(self.a_embed1(action))
+        a_embed = F.sigmoid(self.a_embed2(a_embed))
+
+        joint = s_embed*a_embed
+
+        hidden = F.relu(self.fc1(joint))
+        hidden = F.relu(self.fc2(hidden))
+        hidden = F.relu(self.fc3(hidden))
+        next_state = self.fc4(hidden)
+
+        return next_state, gru_state
 
 
 

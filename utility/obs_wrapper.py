@@ -19,20 +19,27 @@ class ObsWrap(nn.Module):
         self.fc2 = nn.Linear(128, 64)
         self.fc3 = nn.Linear(128, 64)
         
-    def forward(self, obs, from_env = 0):
-        if from_env:
-            pov = np.transpose(obs['pov']) #(TODO: transpose DOESNOT solve the 64x64x3 to 3x64x64 issue!)
-            pov = torch.from_numpy(pov)
-            pov = pov.unsqueeze(0)
-        vec = torch.from_numpy(obs['vector']).float()
-        pov = self.pool(F.relu(self.conv1(pov.float())))
+    def forward(self, obs):
+        pov = torch.from_numpy(np.array([])).float()
+        vec = torch.from_numpy(np.array([])).float()
+        for ob in range(len(obs)):
+            pov_ob = np.transpose(obs[ob]['pov']) #(TODO: transpose DOESNOT solve the 64x64x3 to 3x64x64 issue!)
+            pov_ob = torch.from_numpy(pov_ob).float()
+            pov_ob = pov_ob.unsqueeze(0)
+            vec_ob = torch.from_numpy(obs[ob]['vector']).float()
+            vec_ob = vec_ob.unsqueeze(0)
+            pov = torch.cat((pov, pov_ob))
+            vec = torch.cat((vec, vec_ob))
+        pov = self.pool(F.relu(self.conv1(pov)))
         pov = self.pool(F.relu(self.conv2(pov)))
         pov = self.pool(F.relu(self.conv3(pov)))
         pov = pov.view(-1, 20*4*4)
         pov = F.relu(self.fc1(pov))
         pov = self.fc2(pov)
-        pov = torch.squeeze(pov)
-        s = torch.cat((pov, vec), 0)
+        # pov = torch.squeeze(pov)
+        s = torch.cat((pov, vec), 1)
         return self.fc3(s)
-
+    
+    def whatever(self, a):
+        print("you're screwed")
         
