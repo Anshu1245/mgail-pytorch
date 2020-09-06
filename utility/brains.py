@@ -25,7 +25,8 @@ class Discriminator(nn.Module):
     def forward(self, s, a):
         x = torch.cat((s, a), 1)
         x = F.relu(self.fc1(x))
-        x = F.dropout(F.relu(self.fc2(x)), p=self.drop, training = self.is_training)
+        x = F.relu(self.fc2(x))
+        x = F.dropout(x, p=self.drop, training = self.is_training)
         x = self.fc3(x)  # softmax? 
         return x
 
@@ -57,7 +58,9 @@ class Policy(nn.Module):
         self.fc3 = nn.Linear(self.hidden1, self.out)
 
     def forward(self, s):
+        print(s)
         x = F.relu(self.fc1(s))
+        print(x)
         x = F.relu(self.fc2(x))
         x = F.dropout(F.relu(self.fc2(x)), p=self.drop, training = self.is_training)
         x = self.fc3(x)   

@@ -1,6 +1,7 @@
 from utility.brains import Discriminator, Policy, ForwardModel
-from utility.mgail import MGAIL 
+# from utility.mgail import MGAIL 
 from utility.obs_wrapper import ObsWrap
+from utility.er import *
 import torch
 import torch.nn as nn
 import sys
@@ -11,25 +12,43 @@ class Execute:
         self.env = env
         self.config = config
         self.training = config.is_training
-        self.alg = MGAIL(self.env, self.config)
+        # self.alg = MGAIL(self.env, self.config)
         self.wrap = ObsWrap()
-        self.d = self.alg.d()
+        self.d = Discriminator(inp = self.config.state_size + self.config.action_size,
+                               out = 2,
+                               size = self.config.d_size,
+                               lr = self.config.d_lr,
+                               drop = self.config.drop,
+                               wdecay = self.config.weight_decay,
+                               is_training = self.training)
         self.dloss = nn.CrossEntropyLoss()
-        self.p = self.alg.p()
-        self.fm = self.alg.fm()
+        self.p = Policy(inp = self.config.state_size,
+                        out = self.config.action_size,
+                        size = self.config.p_size,
+                        lr = self.config.p_lr,
+                        drop = self.config.drop,
+                        n_accum_steps = self.config.policy_accum_steps,
+                        wdecay = self.config.weight_decay,
+                        is_training = self.training)
+        self.fm = ForwardModel(s_size=self.config.state_size,
+                               a_size=self.config.action_size,
+                               encod_size=self.config.fm_size,
+                               lr=self.config.fm_lr)
         self.fmloss = nn.MSELoss()
+        self.er_expert = DemonstrationBuffer(envs=['MineRLTreechopVectorObf-v0'], trim=False, trim_reward=None, shuffle=False)
+        self.er_agent = ReplayBuffer(buffer_size = self.config.er_agent_size)
         self.itr = 0
         self.discriminator_policy_switch = 0
         self.mode = 'Prep'
-        self.sigma = self.alg.er_expert.actions_std / self.alg.config.noise_intensity
+        self.sigma = self.er_expert.actions_std / self.config.noise_intensity
 
 
 
 
     def train_fm(self):             
-        algo = self.alg
+        
         initial_gru_state = torch.ones((1, self.fm.encod_size))
-        states_, actions, _, states = algo.er_agent.sample(1)[:4]
+        states_, actions, _, states = self.er_agent.sample(32)[:4]
         s = self.wrap(states)
         s_ = self.wrap(states_)
         preds, _ = self.fm([s, actions, initial_gru_state])
@@ -39,10 +58,10 @@ class Execute:
 
     
     def train_d(self):
-        algo = self.alg
-        state_a_, action_a = algo.er_agent.sample(1)[:2]
+        
+        state_a_, action_a = self.er_agent.sample(32)[:2]
         state_a_ = self.wrap(state_a_)
-        state_e_, action_e = algo.er_expert.sample(1)[:2]
+        state_e_, action_e = self.er_expert.sample(32)[:2]
         state_e_ = self.wrap(state_e_)
         s = torch.cat((state_a_, state_e_))
         a = torch.cat((action_a, action_e))
@@ -58,7 +77,7 @@ class Execute:
 
 
     def train_p(self, obs, done):
-        algo = self.alg
+        
         total_cost = 0
         t = 0
         initial_gru_state = torch.ones((1, self.fm.encod_size))
@@ -73,7 +92,7 @@ class Execute:
         # Accumulate the (noisy) adversarial gradient
         for i in range(self.config.policy_accum_steps):
             # accumulate AL gradient
-            state = self.wrap(state)
+            state = self.wrap([state])
             mu = self.p(state)
             eta = self.sigma * torch.random_normal(shape=torch.shape(mu))
             action = mu + eta
@@ -102,7 +121,7 @@ class Execute:
     
     
     def collect_experience(self, obs, record=1, vis=0, n_steps=None, noise_flag=True, start_at_zero=True):
-        algo = self.alg
+        
         # environment initialization point
         if start_at_zero:
             observation0 = self.env.reset()
@@ -125,7 +144,7 @@ class Execute:
             if not noise_flag:
                 drop = 0.
 
-            state = self.wrap(observation0)
+            state = self.wrap([observation0])
             mu = self.p(state)
             eta = torch.random_normal(shape=torch.shape(a), stddev=self.sigma)
             a = torch.squeeze(mu + noise_flag * eta)
@@ -139,7 +158,7 @@ class Execute:
 
             if record:
                 action = a
-                algo.er_agent.append(observation0, action, reward, observation, done)
+                self.er_agent.append(observation0, action, reward, observation, done)
                 observation0 = observation
         return observation, status
 
@@ -151,11 +170,10 @@ class Execute:
 
         # Fill Experience Buffer
         if self.itr == 0:
-            while self.alg.er_agent.current == self.alg.er_agent.count:
-                obs, done = self.collect_experience(None)
-                buf = 'Collecting examples...%d/%d' % \
-                      (self.alg.er_agent.current, self.alg.er_agent.states.shape[0])
-                sys.stdout.write('\r' + buf)
+            
+            done = True
+            obs, done = self.collect_experience(None, start_at_zero=done)
+            print('collecting experience')
 
         # Adversarial Learning
         else:
@@ -173,7 +191,7 @@ class Execute:
                     obs = self.train_p(obs, done)
 
                 if self.itr % self.config.collect_experience_interval == 0:
-                    obs, done = self.collect_experience(start_at_zero=False, n_steps=self.config.n_steps_train, obs=obs)
+                    obs, done = self.collect_experience(start_at_zero=done, n_steps=self.config.n_steps_train, obs=obs)
 
                 # switch discriminator-policy
                 if self.itr % self.config.discr_policy_itrvl == 0:

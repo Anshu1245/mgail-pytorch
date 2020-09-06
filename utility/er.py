@@ -110,8 +110,11 @@ class DemonstrationBuffer(BufferClass):
 
         import minerl
         for n_demo, env in enumerate(envs):
-            env_data = minerl.data.make(environment=env, data_dir='/home/anshuman/MineRLTreechop/')
+            #Hold on
+            env_data = minerl.data.make(environment=env, data_dir='/media/user/997211ec-8c91-4258-b58e-f144225899f4/MinerlV2')
+            #Looks legit
             trajectories = env_data.get_trajectory_names()
+            print(trajectories)
             for traj in trajectories:
                 try:
                     traj_reward = 0
@@ -142,7 +145,7 @@ class DemonstrationBuffer(BufferClass):
 
                 except TypeError:
                     # sometimes trajectory file is corrupted, if so skip it
-                    pass
+                   pass
         
         self.states['pov'], self.states['vector'] = np.array(self.states['pov']), np.array(self.states['vector'])
         self.actions = np.array(self.actions)
