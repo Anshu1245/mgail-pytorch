@@ -5,7 +5,7 @@ import torch.optim as optim
 
 class Discriminator(nn.Module):
 
-    def __init__(self, inp, out, size, lr, drop, wdecay, is_training):
+    def __init__(self, inp, out, size, lr, drop, wdecay):
         super(Discriminator, self).__init__()
         self.inp = inp
         self.out = out
@@ -14,7 +14,6 @@ class Discriminator(nn.Module):
         self.drop = drop
         self.lr = lr
         self.wdecay = wdecay
-        self.is_training = is_training
 
         # architecture
         self.fc1 = nn.Linear(self.inp, self.hidden0)
@@ -26,11 +25,11 @@ class Discriminator(nn.Module):
         x = torch.cat((s, a), 1)
         x = F.relu(self.fc1(x))
         x = F.relu(self.fc2(x))
-        x = F.dropout(x, p=self.drop, training = self.is_training)
+        x = F.dropout(x, p=self.drop, training = self.training)
         x = self.fc3(x)  # softmax? 
         return x
 
-    def train(self, loss, d_params):
+    def train_(self, loss, d_params):
         opt = optim.Adam(d_params, lr = self.lr, weight_decay = self.wdecay)
         opt.zero_grad()
         loss.backward()
@@ -40,7 +39,7 @@ class Discriminator(nn.Module):
 
 class Policy(nn.Module):
     
-    def __init__(self, inp, out, size, lr, drop, n_accum_steps, wdecay, is_training):
+    def __init__(self, inp, out, size, lr, drop, n_accum_steps, wdecay):
         super(Policy, self).__init__()
         self.inp = inp
         self.out = out        
@@ -50,7 +49,6 @@ class Policy(nn.Module):
         self.lr = lr
         self.wdecay = wdecay
         self.n_accum_steps =  n_accum_steps
-        self.is_training = is_training
 
         # architecture
         self.fc1 = nn.Linear(self.inp, self.hidden0)
@@ -60,11 +58,11 @@ class Policy(nn.Module):
     def forward(self, s):
         x = F.relu(self.fc1(s))
         x = F.relu(self.fc2(x))
-        x = F.dropout(F.relu(self.fc2(x)), p=self.drop, training = self.is_training)
+        x = F.dropout(x, p=self.drop, training = self.training)
         x = self.fc3(x)   
         return x
 
-    def train(self, loss, p_params):
+    def train_(self, loss, p_params):
         opt = optim.Adam(p_params, lr = self.lr, weight_decay = self.wdecay)
         opt.zero_grad()
         loss.backward()
@@ -117,9 +115,11 @@ class ForwardModel(nn.Module):
 
         return next_state, gru_state
 
-
-
-
+    def train_(self, loss, p_params):
+        opt = optim.Adam(p_params, lr = self.lr, weight_decay = self.wdecay)
+        opt.zero_grad()
+        loss.backward()
+        opt.step()
 
 
 

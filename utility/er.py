@@ -114,7 +114,6 @@ class DemonstrationBuffer(BufferClass):
             env_data = minerl.data.make(environment=env, data_dir='/media/user/997211ec-8c91-4258-b58e-f144225899f4/MinerlV2')
             #Looks legit
             trajectories = env_data.get_trajectory_names()
-            print(trajectories)
             for traj in trajectories:
                 try:
                     traj_reward = 0
