@@ -10,6 +10,7 @@ def main():
     exe = Execute(env, config)
     for i in range(1000):
         exe.train_step()
+        exe.itr += 1
     exe.save_model()
 
 if __name__ == '__main__':

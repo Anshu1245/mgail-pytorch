@@ -153,5 +153,6 @@ class DemonstrationBuffer(BufferClass):
         self.dones = np.array(self.dones).reshape(-1,1)
 
         self.actions_std = np.std(self.actions)
+        self.actions_mean = np.mean(self.actions)
 
         return n_samples

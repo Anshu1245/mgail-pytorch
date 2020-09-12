@@ -44,10 +44,12 @@ class Execute:
 
 
     def train_fm(self):             
+        print("training fm")
         initial_gru_state = torch.ones((1, self.fm.encod_size))
         states_, actions, _, states = self.er_agent.sample(32)[:4]
         s = self.wrap(states)
         s_ = self.wrap(states_)
+        actions = self.normalize(actions, self.er_expert.actions_mean, self.er_expert.actions_std)
         preds, _ = self.fm([s, actions, initial_gru_state])
         loss = self.fmloss(preds, s_)
         self.fm.train_(loss, self.fm.parameters())
@@ -55,10 +57,13 @@ class Execute:
 
     
     def train_d(self):
+        print("training d")
         self.d.train()
         state_a_, action_a = self.er_agent.sample(32)[:2]
+        action_a = self.normalize(action_a, self.er_expert.actions_mean, self.er_expert.actions_std)
         state_a_ = self.wrap(state_a_)
         state_e_, action_e = self.er_expert.sample(32)[:2]
+        action_e = self.normalize(action_e, self.er_expert.actions_mean, self.er_expert.actions_std)
         state_e_ = self.wrap(state_e_)
         s = torch.cat((state_a_, state_e_))
         a = torch.cat((action_a, action_e))
@@ -88,6 +93,7 @@ class Execute:
         
         # Accumulate the (noisy) adversarial gradient
         for i in range(self.config.policy_accum_steps):
+            print("accumulating gradients")
             # accumulate AL gradient
             state = self.wrap([state])
             mu = self.p(state)
@@ -103,7 +109,8 @@ class Execute:
             action_detached = action
             action_detached = action_detached.detach().numpy()
             action_detached = {'vector':action_detached}
-            state_e, r, _, _ = self.env.step(action_detached)
+            action_detached = self.denormalize(action_detached, self.er_expert.actions_mean, self.er_expert.actions_std)
+            state_e, _, _, _ = self.env.step(action_detached)
             state_a, _ = self.fm([state, action, initial_gru_state])
 
             nu = state_e - state_a
@@ -114,6 +121,7 @@ class Execute:
 
 
         self.p.train_(total_cost, self.p.parameters())
+        print("training policy")
         return state
 
             
@@ -145,9 +153,10 @@ class Execute:
             while not done:
                 if not noise_flag:
                     drop = 0.
-
+                print("collecting experience")
                 state = self.wrap([observation0])
                 mu = self.p(state)
+                mu = self.denormalize(mu, self.er_expert.actions_mean, self.er_expert.actions_std)
                 eta = torch.normal(mean=0.0, std=self.sigma, size=mu.shape)
                 a = torch.squeeze(mu + noise_flag * eta)
 
@@ -202,8 +211,11 @@ class Execute:
                     self.discriminator_policy_switch = not self.discriminator_policy_switch
 
         
+    def normalize(self, x, mean, stddev):
+        return (x-mean)/stddev
 
-    
+    def denormalize(self, x, mean, stddev):
+        return x*stddev + mean    
 
     def save_model(self, dir_name=None):
         PATH = './model.pth'
