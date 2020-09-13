@@ -5,6 +5,7 @@ from utility.er import *
 import torch
 import torch.nn as nn
 import sys
+import numpy as np
 
 class Execute:
     def __init__(self, env, config):
@@ -46,7 +47,10 @@ class Execute:
     def train_fm(self):             
         print("training fm")
         initial_gru_state = torch.ones((1, self.fm.encod_size))
-        states_, actions, _, states = self.er_agent.sample(32)[:4]
+        exp_batch = self.er_agent.sample(32)
+        states = self.convert_to_tensors(exp_batch.states)
+        actions = self.convert_to_tensors(exp_batch.actions)
+        states_ = self.convert_to_tensors(exp_batch.next_states)
         s = self.wrap(states)
         s_ = self.wrap(states_)
         actions = self.normalize(actions, self.er_expert.actions_mean, self.er_expert.actions_std)
@@ -59,10 +63,14 @@ class Execute:
     def train_d(self):
         print("training d")
         self.d.train()
-        state_a_, action_a = self.er_agent.sample(32)[:2]
+        exp_batch = self.er_agent.sample(32)
+        state_a_ = self.convert_to_tensors(exp_batch.states)
+        action_a = self.convert_to_tensors(exp_batch.actions)
         action_a = self.normalize(action_a, self.er_expert.actions_mean, self.er_expert.actions_std)
         state_a_ = self.wrap(state_a_)
-        state_e_, action_e = self.er_expert.sample(32)[:2]
+        exp_batch = self.er_expert.sample(32)
+        state_e_ = self.convert_to_tensors(exp_batch.states)
+        action_e = self.convert_to_tensors(exp_batch.actions)
         action_e = self.normalize(action_e, self.er_expert.actions_mean, self.er_expert.actions_std)
         state_e_ = self.wrap(state_e_)
         s = torch.cat((state_a_, state_e_))
@@ -150,10 +158,10 @@ class Execute:
             if n_steps is None:
                 n_steps = self.config.n_steps_test
 
+            print("collecting experience")
             while not done:
                 if not noise_flag:
                     drop = 0.
-                print("collecting experience")
                 state = self.wrap([observation0])
                 mu = self.p(state)
                 mu = self.denormalize(mu, self.er_expert.actions_mean, self.er_expert.actions_std)
@@ -182,11 +190,12 @@ class Execute:
         # policy: learning in adversarial mode
 
         # Fill Experience Buffer
+        print("%dth iteration"%(self.itr+1))
         if self.itr == 0:
             
             done = True
             obs, done = self.collect_experience(None, start_at_zero=done)
-            print('collecting experience')
+            print('collecting initial experience')
 
         # Adversarial Learning
         else:
@@ -216,6 +225,35 @@ class Execute:
 
     def denormalize(self, x, mean, stddev):
         return x*stddev + mean    
+
+
+    def convert_to_tensors(self, *args):
+        if len(args) == 1:
+            # dict was passed, return dict
+            if isinstance(args[0], dict):
+                tensors = {}
+                for key, value in args[0].items():
+                    tensors[key] = self.convert_to_tensors(value)
+
+            # tuple or list was passed, return tuple
+            elif isinstance(args[0], tuple) or isinstance(args[0], list):
+                tensors = list([self.convert_to_tensors(arr) for arr in args[0]])
+
+            # single array was passed
+            elif isinstance(args[0], np.ndarray):
+                tensors = torch.from_numpy(args[0])
+
+            elif isinstance(args[0], torch.Tensor):
+                tensors = args[0]
+
+            else:
+                raise TypeError('{} object cannot be converted to tensor'.format(type(args[0])))
+            
+        else:
+            tensors = list([self.convert_to_tensors(arg) for arg in args])
+        
+        return tensors
+
 
     def save_model(self, dir_name=None):
         PATH = './model.pth'
