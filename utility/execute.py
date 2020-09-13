@@ -237,7 +237,7 @@ class Execute:
 
             # tuple or list was passed, return tuple
             elif isinstance(args[0], tuple) or isinstance(args[0], list):
-                tensors = list([self.convert_to_tensors(arr) for arr in args[0]])
+                tensors = tuple([self.convert_to_tensors(arr) for arr in args[0]])
 
             # single array was passed
             elif isinstance(args[0], np.ndarray):
@@ -250,7 +250,7 @@ class Execute:
                 raise TypeError('{} object cannot be converted to tensor'.format(type(args[0])))
             
         else:
-            tensors = list([self.convert_to_tensors(arg) for arg in args])
+            tensors = tuple([self.convert_to_tensors(arg) for arg in args])
         
         return tensors
 
