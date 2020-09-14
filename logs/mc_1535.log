@@ -1,0 +1,639 @@
+[07:43:16] [Realms Notification Availability checker #1/INFO]: Could not authorize you against Realms server: Invalid session id
+[07:46:24] [EnvServerSocketHandler/INFO]: [STDOUT]: Received from localhost:<MissionInit xmlns="http://ProjectMalmo.microsoft.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SchemaVersion="" PlatformVersion="0.37.0">
+                                <Mission>
+    <About>
+        <Summary>MineRLTreechopVectorObf-v0</Summary>
+    </About>
+
+    <ModSettings>
+         <MsPerTick>50</MsPerTick>
+          <!--<PrioritiseOffscreenRendering>true</PrioritiseOffscreenRendering>-->
+    </ModSettings>
+
+
+  <ServerSection>
+
+    <ServerInitialConditions>
+      <Time>
+        <!--<StartTime>0</StartTime>-->
+        <AllowPassageOfTime>false</AllowPassageOfTime>
+      </Time>
+            
+      <AllowSpawning>true</AllowSpawning>
+    </ServerInitialConditions>
+
+    <ServerHandlers>
+      <DefaultWorldGenerator forceReset="true" generatorOptions="{&quot;coordinateScale&quot;:684.412,&quot;heightScale&quot;:684.412,&quot;lowerLimitScale&quot;:512.0,&quot;upperLimitScale&quot;:512.0,&quot;depthNoiseScaleX&quot;:200.0,&quot;depthNoiseScaleZ&quot;:200.0,&quot;depthNoiseScaleExponent&quot;:0.5,&q
+[07:46:26] [EnvServerSocketHandler/INFO]: [STDOUT]: REPLYING WITH: MALMOOK
+[07:46:26] [Client thread/INFO]: [STDOUT]: Mission received: MineRLTreechopVectorObf-v0
+[07:46:26] [Client thread/INFO]: [STDOUT]: CLIENT request state: CREATING_HANDLERS
+[07:46:26] [Client thread/INFO]: [STDOUT]: CLIENT enter state: CREATING_HANDLERS
+[07:46:26] [Client thread/INFO]: [STDOUT]: Starting command server.
+[07:46:26] [Thread-10/INFO]: [STDOUT]: INFO: ->com(0) Listening for messages on port 10207
+[07:46:26] [Client thread/INFO]: [STDOUT]: CLIENT request state: EVALUATING_WORLD_REQUIREMENTS
+[07:46:26] [Client thread/INFO]: [STDOUT]: CLIENT enter state: EVALUATING_WORLD_REQUIREMENTS
+[07:46:26] [Client thread/INFO]: [STDOUT]: CLIENT request state: CREATING_NEW_WORLD
+[07:46:26] [Client thread/INFO]: [STDOUT]: CLIENT enter state: CREATING_NEW_WORLD
+[07:46:28] [Server thread/INFO]: Starting integrated minecraft server version 1.11.2
+[07:46:28] [Server thread/INFO]: Generating keypair
+[07:46:28] [Server thread/INFO]: Injecting existing block and item data into this server instance
+[07:46:28] [Server thread/INFO]: Applying holder lookups
+[07:46:28] [Server thread/INFO]: Holder lookups applied
+[07:46:29] [Server thread/INFO]: Loading dimension 0 (TEMP_0_e360b5e4-5fb6-4c60-9803-af35ca927d62) (net.minecraft.server.integrated.IntegratedServer@444ece10)
+[07:46:29] [Server thread/INFO]: Loading dimension 1 (TEMP_0_e360b5e4-5fb6-4c60-9803-af35ca927d62) (net.minecraft.server.integrated.IntegratedServer@444ece10)
+[07:46:29] [Server thread/INFO]: Loading dimension -1 (TEMP_0_e360b5e4-5fb6-4c60-9803-af35ca927d62) (net.minecraft.server.integrated.IntegratedServer@444ece10)
+[07:46:29] [Server thread/INFO]: Preparing start region for level 0
+[07:46:30] [Server thread/INFO]: Preparing spawn area: 6%
+[07:46:31] [Server thread/INFO]: Preparing spawn area: 11%
+[07:46:32] [Server thread/INFO]: Preparing spawn area: 18%
+[07:46:33] [Server thread/INFO]: Preparing spawn area: 23%
+[07:46:34] [Server thread/INFO]: Preparing spawn area: 32%
+[07:46:35] [Server thread/INFO]: Preparing spawn area: 39%
+[07:46:36] [Server thread/INFO]: Preparing spawn area: 46%
+[07:46:37] [Server thread/INFO]: Preparing spawn area: 53%
+[07:46:38] [Server thread/INFO]: Preparing spawn area: 60%
+[07:46:39] [Server thread/INFO]: Preparing spawn area: 68%
+[07:46:40] [Server thread/INFO]: Preparing spawn area: 76%
+[07:46:41] [Server thread/INFO]: Preparing spawn area: 84%
+[07:46:42] [Server thread/INFO]: Preparing spawn area: 92%
+[07:46:44] [Server thread/INFO]: Changing view distance to 4, from 10
+[07:46:45] [Server thread/INFO]: [STDOUT]: SERVER request state: WAITING_FOR_MOD_READY
+[07:46:45] [Server thread/INFO]: [STDOUT]: CLIENT request state: WAITING_FOR_SERVER_READY
+[07:46:45] [Server thread/INFO]: [STDOUT]: SERVER enter state: WAITING_FOR_MOD_READY
+[07:46:45] [Client thread/INFO]: [STDOUT]: CLIENT enter state: WAITING_FOR_SERVER_READY
+[07:46:45] [Server thread/INFO]: [STDOUT]: SERVER request state: DORMANT
+[07:46:45] [Server thread/INFO]: [STDOUT]: SERVER enter state: DORMANT
+[07:46:45] [Server thread/INFO]: [STDOUT]: INCOMING MISSION: Received MissionInit directly through ServerStateMachine constructor.
+[07:46:45] [Server thread/INFO]: [STDOUT]: Mission received: MineRLTreechopVectorObf-v0
+[07:46:45] [Netty Local Client IO #0/INFO]: [STDOUT]: Transformed Name: net.minecraft.client.entity.EntityOtherPlayerMP
+[07:46:45] [Netty Local Client IO #0/INFO]: [STDOUT]: MALMO: Attempting to transform MinecraftServer
+[07:46:45] [Netty Local Client IO #0/INFO]: [STDOUT]: MALMO: Found EntityOtherPlayerMP, attempting to transform it
+[07:46:45] [Server thread/INFO]: Received mission: §9MineRLTreechopVectorObf-v0
+[07:46:45] [Server thread/INFO]: Source: §alocalhost
+[07:46:45] [Server thread/INFO]: [STDOUT]: SERVER request state: BUILDING_WORLD
+[07:46:45] [Server thread/INFO]: [STDOUT]: SERVER enter state: BUILDING_WORLD
+[07:46:45] [Server thread/INFO]: [STDOUT]: SERVER request state: WAITING_FOR_AGENTS_TO_ASSEMBLE
+[07:46:45] [Server thread/INFO]: [STDOUT]: SERVER enter state: WAITING_FOR_AGENTS_TO_ASSEMBLE
+[07:46:45] [Server thread/INFO]: [STDOUT]: Experiment requires: 
+[07:46:45] [Server thread/INFO]: [STDOUT]: >>>> MineRLAgent
+[07:46:45] [Netty Local Client IO #0/INFO]: Server protocol version 2
+[07:46:45] [Netty Server IO #1/INFO]: Client protocol version 2
+[07:46:45] [Netty Server IO #1/INFO]: Client attempting to join with 5 mods : minecraft@1.11.2,FML@8.0.99.99,malmomod@0.37.0,forge@13.20.0.2228,mcp@9.19
+[07:46:45] [Netty Local Client IO #0/INFO]: [Netty Local Client IO #0] Client side modded connection established
+[07:46:45] [Server thread/INFO]: [Server thread] Server side modded connection established
+[07:46:45] [Server thread/INFO]: MineRLAgent[local:E:f69eb9d3] logged in with entity id 166 at (233.5, 58.0, 242.5)
+[07:46:45] [Server thread/INFO]: MineRLAgent joined the game
+[07:46:47] [Client thread/INFO]: [STDOUT]: ***Telling server we are ready - MineRLAgent
+[07:46:47] [Client thread/INFO]: [STDOUT]: CLIENT request state: RUNNING
+[07:46:47] [Client thread/INFO]: [STDOUT]: CLIENT enter state: RUNNING
+[07:46:47] [Server thread/INFO]: [STDOUT]: SERVER request state: RUNNING
+[07:46:47] [Server thread/INFO]: [STDOUT]: SERVER enter state: RUNNING
+[07:46:47] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 2823ms behind, skipping 56 tick(s)
+[07:46:47] [Client thread/INFO]: [STDOUT]: Resized the window
+[07:46:47] [Client thread/INFO]: [STDOUT]: Unpausing
+[07:46:48] [Client thread/INFO]: [CHAT] §l400...
+[07:46:48] [Client thread/INFO]: [CHAT] §l399...
+[07:46:48] [Client thread/INFO]: [CHAT] §l398...
+[07:46:50] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:46:51] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:46:52] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:46:54] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:46:55] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:46:56] [Client thread/INFO]: [CHAT] §l397...
+[07:46:56] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:46:58] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:46:59] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:47:00] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:47:02] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:47:03] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:47:04] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:47:06] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:47:06] [Client thread/INFO]: [CHAT] §l396...
+[07:47:07] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:47:08] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:47:10] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:47:11] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:47:12] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:47:14] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:47:15] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:47:15] [Client thread/INFO]: [CHAT] §l395...
+[07:47:16] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:47:17] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:47:18] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:47:20] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:47:21] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:47:22] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:47:23] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:47:25] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:47:25] [Client thread/INFO]: [CHAT] §l394...
+[07:47:26] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:47:27] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:47:29] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:47:30] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:47:31] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:47:33] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:47:34] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:47:34] [Client thread/INFO]: [CHAT] §l393...
+[07:47:35] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:47:36] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:47:37] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:47:38] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:47:40] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:47:41] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:47:43] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:47:44] [Client thread/INFO]: [CHAT] §l392...
+[07:47:44] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:47:46] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:47:47] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:47:48] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:47:49] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:47:50] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:47:52] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:47:53] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:47:53] [Client thread/INFO]: [CHAT] §l391...
+[07:47:54] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:47:56] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:47:57] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:47:59] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:48:00] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:48:01] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:48:03] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:48:04] [Client thread/INFO]: [CHAT] §l390...
+[07:48:04] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:48:05] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:48:07] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:48:08] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:48:10] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:48:11] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:48:12] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:48:13] [Client thread/INFO]: [CHAT] §l389...
+[07:48:14] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:48:15] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:48:16] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:48:18] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:48:19] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:48:20] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:48:21] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:48:23] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:48:23] [Client thread/INFO]: [CHAT] §l388...
+[07:48:24] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:48:25] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:48:26] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:48:28] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:48:29] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:48:30] [Server thread/INFO]: [STDOUT]: Warning: managed 5/20 ticks this second.
+[07:48:30] [Client thread/INFO]: [CHAT] §l387...
+[07:48:31] [Server thread/INFO]: [STDOUT]: Warning: managed 6/20 ticks this second.
+[07:48:32] [Server thread/INFO]: [STDOUT]: Warning: managed 5/20 ticks this second.
+[07:48:33] [Server thread/INFO]: [STDOUT]: Warning: managed 6/20 ticks this second.
+[07:48:34] [Server thread/INFO]: [STDOUT]: Warning: managed 6/20 ticks this second.
+[07:48:34] [Client thread/INFO]: [CHAT] §l386...
+[07:48:35] [Server thread/INFO]: [STDOUT]: Warning: managed 6/20 ticks this second.
+[07:48:36] [Server thread/INFO]: [STDOUT]: Warning: managed 6/20 ticks this second.
+[07:48:37] [Server thread/INFO]: [STDOUT]: Warning: managed 5/20 ticks this second.
+[07:48:38] [Client thread/INFO]: [CHAT] §l385...
+[07:48:38] [Server thread/INFO]: [STDOUT]: Warning: managed 6/20 ticks this second.
+[07:48:40] [Server thread/INFO]: [STDOUT]: Warning: managed 6/20 ticks this second.
+[07:48:41] [Server thread/INFO]: [STDOUT]: Warning: managed 5/20 ticks this second.
+[07:48:42] [Server thread/INFO]: [STDOUT]: Warning: managed 6/20 ticks this second.
+[07:48:42] [Client thread/INFO]: [CHAT] §l384...
+[07:48:43] [Server thread/INFO]: [STDOUT]: Warning: managed 6/20 ticks this second.
+[07:48:44] [Server thread/INFO]: [STDOUT]: Warning: managed 6/20 ticks this second.
+[07:48:45] [Server thread/INFO]: [STDOUT]: Warning: managed 6/20 ticks this second.
+[07:48:46] [Client thread/INFO]: [CHAT] §l383...
+[07:48:46] [Server thread/INFO]: [STDOUT]: Warning: managed 6/20 ticks this second.
+[07:48:47] [Server thread/INFO]: [STDOUT]: Warning: managed 6/20 ticks this second.
+[07:48:49] [Server thread/INFO]: [STDOUT]: Warning: managed 5/20 ticks this second.
+[07:48:49] [Client thread/INFO]: [CHAT] §l382...
+[07:48:50] [Server thread/INFO]: [STDOUT]: Warning: managed 6/20 ticks this second.
+[07:48:51] [Server thread/INFO]: [STDOUT]: Warning: managed 6/20 ticks this second.
+[07:48:52] [Server thread/INFO]: [STDOUT]: Warning: managed 6/20 ticks this second.
+[07:48:53] [Server thread/INFO]: [STDOUT]: Warning: managed 5/20 ticks this second.
+[07:48:53] [Client thread/INFO]: [CHAT] §l381...
+[07:48:54] [Server thread/INFO]: [STDOUT]: Warning: managed 6/20 ticks this second.
+[07:48:55] [Server thread/INFO]: [STDOUT]: Warning: managed 6/20 ticks this second.
+[07:48:56] [Server thread/INFO]: [STDOUT]: Warning: managed 5/20 ticks this second.
+[07:48:57] [Client thread/INFO]: [CHAT] §l380...
+[07:48:57] [Server thread/INFO]: [STDOUT]: Warning: managed 6/20 ticks this second.
+[07:48:59] [Server thread/INFO]: [STDOUT]: Warning: managed 6/20 ticks this second.
+[07:49:00] [Server thread/INFO]: [STDOUT]: Warning: managed 6/20 ticks this second.
+[07:49:02] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:49:03] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:49:04] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:49:04] [Client thread/INFO]: [CHAT] §l379...
+[07:49:05] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:49:06] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:49:08] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:49:09] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:49:11] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:49:12] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:49:14] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:49:14] [Client thread/INFO]: [CHAT] §l378...
+[07:49:15] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:49:16] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:49:17] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:49:19] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:49:20] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:49:22] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:49:23] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:49:24] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:49:24] [Client thread/INFO]: [CHAT] §l377...
+[07:49:26] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:49:27] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:49:28] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:49:29] [Server thread/INFO]: [STDOUT]: Warning: managed 3/20 ticks this second.
+[07:49:31] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:49:32] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:49:34] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:49:35] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:49:37] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:49:39] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:49:40] [Client thread/INFO]: [CHAT] §l376...
+[07:49:41] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:49:42] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:49:44] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:49:46] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:49:47] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:49:48] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:49:50] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:49:51] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:49:53] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:49:55] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:49:57] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:49:58] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:50:00] [Client thread/INFO]: [CHAT] §l375...
+[07:50:00] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:50:01] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:50:03] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:50:05] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:50:06] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:50:07] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:50:09] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:50:11] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:50:13] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:50:14] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:50:15] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:50:16] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:50:18] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:50:20] [Client thread/INFO]: [CHAT] §l374...
+[07:50:20] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:50:22] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:50:23] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:50:25] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:50:27] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:50:29] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:50:31] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:50:33] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:50:34] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:50:35] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:50:37] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:50:39] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:50:40] [Client thread/INFO]: [CHAT] §l373...
+[07:50:40] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:50:42] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:50:44] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:50:45] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:50:47] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:50:48] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:50:49] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:50:51] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:50:52] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:50:54] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:50:55] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:50:57] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:50:58] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:50:59] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:51:00] [Client thread/INFO]: [CHAT] §l372...
+[07:51:01] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:51:02] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:51:03] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:51:05] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:51:06] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:51:07] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:51:09] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:51:11] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:51:13] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:51:14] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:51:15] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:51:17] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:51:19] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:51:20] [Client thread/INFO]: [CHAT] §l371...
+[07:51:20] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:51:21] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:51:23] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:51:25] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:51:26] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:51:27] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:51:29] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:51:31] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:51:33] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:51:34] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:51:35] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:51:37] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:51:38] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:51:39] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:51:40] [Client thread/INFO]: [CHAT] §l370...
+[07:51:41] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:51:43] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:51:44] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:51:46] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:51:48] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:51:49] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:51:51] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:51:53] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:51:54] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:51:55] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:51:57] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:51:59] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:52:00] [Client thread/INFO]: [CHAT] §l369...
+[07:52:01] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:52:03] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:52:05] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:52:06] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:52:07] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:52:09] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:52:10] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:52:11] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:52:13] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:52:14] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:52:16] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:52:18] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:52:19] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:52:20] [Client thread/INFO]: [CHAT] §l368...
+[07:52:21] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:52:23] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:52:25] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:52:26] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:52:28] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:52:29] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:52:31] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:52:32] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:52:34] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:52:35] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:52:37] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:52:39] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:52:40] [Client thread/INFO]: [CHAT] §l367...
+[07:52:41] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:52:42] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:52:43] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:52:45] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:52:46] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:52:47] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:52:49] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:52:50] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:52:51] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:52:52] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:52:54] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:52:56] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:52:57] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:52:58] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:53:00] [Client thread/INFO]: [CHAT] §l366...
+[07:53:00] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:53:01] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:53:03] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:53:05] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:53:06] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:53:07] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:53:09] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:53:11] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:53:13] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:53:15] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:53:17] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:53:19] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:53:20] [Client thread/INFO]: [CHAT] §l365...
+[07:53:21] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:53:22] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:53:24] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:53:26] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:53:28] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:53:30] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:53:32] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:53:33] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:53:35] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:53:37] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:53:38] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:53:40] [Client thread/INFO]: [CHAT] §l364...
+[07:53:40] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:53:41] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:53:42] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:53:43] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:53:45] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:53:47] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:53:49] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:53:50] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:53:51] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:53:53] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:53:54] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:53:55] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:53:57] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:53:59] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:54:00] [Client thread/INFO]: [CHAT] §l363...
+[07:54:01] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:54:03] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:54:05] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:54:06] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:54:08] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:54:10] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:54:11] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:54:12] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:54:14] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:54:16] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:54:17] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:54:18] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:54:20] [Client thread/INFO]: [CHAT] §l362...
+[07:54:20] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:54:21] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:54:23] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:54:25] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:54:27] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:54:29] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:54:31] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:54:33] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:54:35] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:54:37] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:54:38] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:54:39] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:54:40] [Client thread/INFO]: [CHAT] §l361...
+[07:54:41] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:54:42] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:54:43] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:54:45] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:54:46] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:54:47] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:54:49] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:54:50] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:54:52] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:54:54] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:54:56] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:54:58] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:54:59] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:55:00] [Client thread/INFO]: [CHAT] §l360...
+[07:55:00] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:55:02] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:55:03] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:55:05] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:55:07] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:55:08] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:55:10] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:55:11] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:55:13] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:55:14] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:55:16] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:55:17] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:55:19] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:55:20] [Client thread/INFO]: [CHAT] §l359...
+[07:55:20] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:55:22] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:55:24] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:55:25] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:55:26] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:55:28] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:55:30] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:55:32] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:55:34] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:55:35] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:55:37] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:55:38] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:55:39] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:55:40] [Client thread/INFO]: [CHAT] §l358...
+[07:55:41] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:55:42] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:55:43] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:55:44] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:55:45] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:55:47] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:55:49] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:55:51] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:55:52] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:55:54] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:55:56] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:55:58] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:55:59] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:56:00] [Client thread/INFO]: [CHAT] §l357...
+[07:56:01] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:56:02] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:56:04] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:56:06] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:56:08] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:56:09] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:56:11] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:56:12] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:56:14] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:56:15] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:56:17] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:56:18] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:56:19] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:56:20] [Client thread/INFO]: [CHAT] §l356...
+[07:56:21] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:56:22] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:56:24] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:56:26] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:56:27] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:56:28] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:56:29] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:56:31] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:56:33] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:56:34] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:56:35] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:56:36] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:56:38] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:56:39] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:56:40] [Client thread/INFO]: [CHAT] §l355...
+[07:56:41] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:56:43] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:56:45] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:56:46] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:56:48] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:56:49] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:56:51] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:56:52] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:56:54] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:56:55] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:56:57] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:56:58] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:56:59] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:57:00] [Client thread/INFO]: [CHAT] §l354...
+[07:57:01] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:57:02] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:57:04] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:57:06] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:57:08] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:57:09] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:57:11] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:57:13] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:57:14] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:57:16] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:57:18] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:57:20] [Client thread/INFO]: [CHAT] §l353...
+[07:57:20] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:57:21] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:57:23] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:57:25] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:57:27] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:57:29] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:57:30] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:57:31] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:57:33] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:57:34] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:57:35] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:57:37] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:57:38] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:57:40] [Client thread/INFO]: [CHAT] §l352...
+[07:57:40] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:57:42] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:57:43] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:57:45] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:57:47] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:57:48] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:57:50] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:57:52] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:57:53] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:57:55] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:57:57] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:57:59] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:58:00] [Client thread/INFO]: [CHAT] §l351...
+[07:58:00] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:58:02] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:58:03] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:58:05] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:58:07] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:58:09] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:58:11] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:58:13] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:58:15] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:58:17] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:58:19] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:58:20] [Client thread/INFO]: [CHAT] §l350...
+[07:58:21] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:58:22] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:58:23] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:58:25] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:58:26] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:58:28] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:58:30] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:58:31] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:58:33] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:58:35] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:58:37] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:58:38] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:58:40] [Client thread/INFO]: [CHAT] §l349...
+[07:58:40] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:58:42] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:58:43] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:58:45] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:58:47] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:58:48] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:58:50] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:58:51] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:58:53] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:58:54] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:58:56] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:58:57] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:58:59] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:59:00] [Client thread/INFO]: [CHAT] §l348...
+[07:59:00] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:59:02] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:59:03] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:59:05] [Server thread/INFO]: [STDOUT]: Warning: managed 2/20 ticks this second.
+[07:59:06] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.
+[07:59:08] [Server thread/INFO]: [STDOUT]: Warning: managed 1/20 ticks this second.

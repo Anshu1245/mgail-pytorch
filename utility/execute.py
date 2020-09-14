@@ -45,12 +45,16 @@ class Execute:
 
 
     def train_fm(self):             
+        count = 0
         print("training fm")
         initial_gru_state = torch.ones((1, self.fm.encod_size))
         exp_batch = self.er_agent.sample(32)
         states = self.convert_to_tensors(exp_batch.states)
         actions = self.convert_to_tensors(exp_batch.actions)
         states_ = self.convert_to_tensors(exp_batch.next_states)
+        if not count:
+            print(states['pov'].shape)
+            count = 1
         s = self.wrap(states)
         s_ = self.wrap(states_)
         actions = self.normalize(actions, self.er_expert.actions_mean, self.er_expert.actions_std)
@@ -99,11 +103,15 @@ class Execute:
         else:
             state = obs
         
+        pov = state['pov']
+        state = self.convert_to_tensors({'pov':np.expand_dims(pov, 0), 'vector':np.expand_dims(state['vector'], 0)})
+        state = self.wrap(state).squeeze(0)
+        
         # Accumulate the (noisy) adversarial gradient
         for i in range(self.config.policy_accum_steps):
             print("accumulating gradients")
             # accumulate AL gradient
-            state = self.wrap([state])
+            
             mu = self.p(state)
             eta = self.sigma * torch.randn(size=mu.shape, dtype=torch.float)
             action = mu + eta
@@ -119,6 +127,9 @@ class Execute:
             action_detached = {'vector':action_detached}
             action_detached = self.denormalize(action_detached, self.er_expert.actions_mean, self.er_expert.actions_std)
             state_e, _, _, _ = self.env.step(action_detached)
+            pov = state_e['pov']
+            state_e = self.convert_to_tensors({'pov':np.expand_dims(pov, 0), 'vector':np.expand_dims(state_e['vector'], 0)})
+            state_e = self.wrap(state_e).squeeze(0)
             state_a, _ = self.fm([state, action, initial_gru_state])
 
             nu = state_e - state_a
@@ -162,7 +173,10 @@ class Execute:
             while not done:
                 if not noise_flag:
                     drop = 0.
-                state = self.wrap([observation0])
+                
+                pov = observation0['pov']
+                state = self.convert_to_tensors({'pov':np.expand_dims(pov, 0), 'vector':np.expand_dims(observation0['vector'], 0)})
+                state = self.wrap(state).squeeze(0)
                 mu = self.p(state)
                 mu = self.denormalize(mu, self.er_expert.actions_mean, self.er_expert.actions_std)
                 eta = torch.normal(mean=0.0, std=self.sigma, size=mu.shape)
@@ -238,7 +252,7 @@ class Execute:
 
             # tuple or list was passed, return tuple
             elif isinstance(args[0], tuple) or isinstance(args[0], list):
-                tensors = tuple([self.convert_to_tensors(arr) for arr in args[0]])
+                tensors = list([self.convert_to_tensors(arr) for arr in args[0]])
 
             # single array was passed
             elif isinstance(args[0], np.ndarray):
@@ -251,7 +265,7 @@ class Execute:
                 raise TypeError('{} object cannot be converted to tensor'.format(type(args[0])))
             
         else:
-            tensors = tuple([self.convert_to_tensors(arg) for arg in args])
+            tensors = list([self.convert_to_tensors(arg) for arg in args])
         
         return tensors
 
