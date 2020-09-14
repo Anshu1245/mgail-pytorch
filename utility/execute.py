@@ -169,6 +169,7 @@ class Execute:
                 a = torch.squeeze(mu + noise_flag * eta)
 
                 a = a.numpy()
+                action_add = a
                 a = {'vector':a}
                 observation, reward, done, _ = self.env.step(a)
                 status = done
@@ -178,7 +179,7 @@ class Execute:
                 print(reward)
 
                 if record:
-                    action = a
+                    action = action_add
                     self.er_agent.append(observation0, action, reward, observation, done)
                     observation0 = observation
             return observation, status
