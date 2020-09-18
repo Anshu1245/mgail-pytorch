@@ -119,7 +119,7 @@ class Execute:
             d = self.d(state, action)
             label = torch.tensor([1]).long()
             cost = self.dloss(d, label)
-            total_cost += torch.pow(self.config.gamma, t)*cost
+            total_cost += (self.config.gamma**t)*cost
 
             # get next state
             action_detached = action.squeeze(0)
