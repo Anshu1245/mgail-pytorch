@@ -199,6 +199,7 @@ class Execute:
             return observation, status
 
     def train_step(self):
+        global obs
         # phase_1 - Adversarial training
         # forward_model: learning from agent data
         # discriminator: learning in an interleaved mode with policy
@@ -209,10 +210,9 @@ class Execute:
         if self.itr == 0:
             
             done = True
-            obs, done = self.collect_experience(None, start_at_zero=done)
             print('collecting initial experience')
-            print(obs)
-            print(done)
+            obs, done = self.collect_experience(None, start_at_zero=done)
+            
 
         
         # Adversarial Learning
@@ -228,8 +228,6 @@ class Execute:
                 if self.discriminator_policy_switch:
                     self.train_d()
                 else:
-                    print("obs in p train")
-                    print(obs)
                     obs = self.train_p(obs, done)
 
                 if self.itr % self.config.collect_experience_interval == 0:
