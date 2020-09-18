@@ -47,7 +47,7 @@ class Execute:
     def train_fm(self):             
         count = 0
         print("training fm")
-        initial_gru_state = torch.ones((1, self.fm.encod_size))
+        initial_gru_state = torch.ones((32, self.fm.encod_size))
         exp_batch = self.er_agent.sample(32)
         states = self.convert_to_tensors(exp_batch.states)
         actions = self.convert_to_tensors(exp_batch.actions)
