@@ -116,7 +116,7 @@ class ForwardModel(nn.Module):
         return next_state, gru_state
 
     def train_(self, loss, p_params):
-        opt = optim.Adam(p_params, lr = self.lr, weight_decay = self.wdecay)
+        opt = optim.Adam(p_params, lr = self.lr)
         opt.zero_grad()
         loss.backward()
         opt.step()
