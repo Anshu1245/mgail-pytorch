@@ -115,7 +115,6 @@ class Execute:
             mu = self.p(state)
             eta = self.sigma * torch.randn(size=mu.shape, dtype=torch.float)
             action = mu + eta
-            action = action.unsqueeze(0)
 
             d = self.d(state, action)
             label = torch.tensor([1]).float()
