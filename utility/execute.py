@@ -117,7 +117,7 @@ class Execute:
             action = mu + eta
 
             d = self.d(state, action)
-            label = torch.tensor([1]).float()
+            label = torch.tensor([1]).long()
             cost = self.dloss(d, label)
             total_cost += torch.pow(self.config.gamma, t)*cost
 
