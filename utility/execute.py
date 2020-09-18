@@ -200,6 +200,7 @@ class Execute:
 
     def train_step(self):
         global obs
+        global done
         # phase_1 - Adversarial training
         # forward_model: learning from agent data
         # discriminator: learning in an interleaved mode with policy
