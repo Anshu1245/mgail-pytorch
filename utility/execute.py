@@ -212,6 +212,9 @@ class Execute:
             obs, done = self.collect_experience(None, start_at_zero=done)
             print('collecting initial experience')
 
+        print(obs)
+        print(done)
+
         # Adversarial Learning
         else:
             self.train_fm()
@@ -225,6 +228,8 @@ class Execute:
                 if self.discriminator_policy_switch:
                     self.train_d()
                 else:
+                    print("obs in p train")
+                    print(obs)
                     obs = self.train_p(obs, done)
 
                 if self.itr % self.config.collect_experience_interval == 0:
