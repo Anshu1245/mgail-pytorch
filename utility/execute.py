@@ -81,7 +81,7 @@ class Execute:
         a = torch.cat((action_a, action_e))
         labels_e = torch.zeros(state_e_.shape[0])
         labels_a = torch.ones(state_a_.shape[0])
-        labels = torch.cat((labels_a, labels_e))
+        labels = torch.cat((labels_a, labels_e)).long()
         # labels = torch.cat((labels, 1-labels), 1)
         preds = self.d(s, a)
         loss = self.dloss(preds, labels)
