@@ -79,7 +79,7 @@ class Execute:
         state_e_ = self.wrap(state_e_)
         s = torch.cat((state_a_, state_e_))
         a = torch.cat((action_a, action_e))
-        labels_a = torch.zeroes(state_a_.shape[0], 1)
+        labels_a = torch.zeros(state_a_.shape[0], 1)
         labels_e = torch.ones(state_e_.shape[0], 1)
         labels = torch.cat((labels_a, labels_e))
         labels = torch.cat((labels, 1-labels), 1)
