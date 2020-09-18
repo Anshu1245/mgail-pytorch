@@ -211,10 +211,10 @@ class Execute:
             done = True
             obs, done = self.collect_experience(None, start_at_zero=done)
             print('collecting initial experience')
+            print(obs)
+            print(done)
 
-        print(obs)
-        print(done)
-
+        
         # Adversarial Learning
         else:
             self.train_fm()
