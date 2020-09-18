@@ -105,7 +105,7 @@ class Execute:
         
         pov = state['pov']
         state = self.convert_to_tensors({'pov':np.expand_dims(pov, 0), 'vector':np.expand_dims(state['vector'], 0)})
-        state = self.wrap(state).squeeze(0)
+        state = self.wrap(state)   # .squeeze(0)
         
         # Accumulate the (noisy) adversarial gradient
         for i in range(self.config.policy_accum_steps):
@@ -115,6 +115,7 @@ class Execute:
             mu = self.p(state)
             eta = self.sigma * torch.randn(size=mu.shape, dtype=torch.float)
             action = mu + eta
+            action = action.unsqueeze(0)
 
             d = self.d(state, action)
             label = torch.tensor([1]).float()
@@ -122,7 +123,7 @@ class Execute:
             total_cost += torch.pow(self.config.gamma, t)*cost
 
             # get next state
-            action_detached = action
+            action_detached = action.squeeze(0)
             action_detached = action_detached.detach().numpy()
             action_detached = {'vector':action_detached}
             action_detached = self.denormalize(action_detached, self.er_expert.actions_mean, self.er_expert.actions_std)
