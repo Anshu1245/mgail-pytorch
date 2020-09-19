@@ -174,6 +174,7 @@ class Execute:
                 if not noise_flag:
                     drop = 0.
                 
+                print(observation0)
                 pov = observation0['pov']
                 state = self.convert_to_tensors({'pov':np.expand_dims(pov, 0), 'vector':np.expand_dims(observation0['vector'], 0)})
                 state = self.wrap(state).squeeze(0)
@@ -232,6 +233,7 @@ class Execute:
                     obs = self.train_p(obs, done)
 
                 if self.itr % self.config.collect_experience_interval == 0:
+                    print(obs)
                     obs, done = self.collect_experience(start_at_zero=done, n_steps=self.config.n_steps_train, obs=obs)
 
                 # switch discriminator-policy
