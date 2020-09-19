@@ -234,7 +234,7 @@ class Execute:
 
                 if self.itr % self.config.collect_experience_interval == 0:
                     print(obs)
-                    obs, done = self.collect_experience(start_at_zero=done, n_steps=self.config.n_steps_train, obs=obs)
+                    obs, done = self.collect_experience(obs, start_at_zero=done, n_steps=self.config.n_steps_train)
 
                 # switch discriminator-policy
                 if self.itr % self.config.discr_policy_itrvl == 0:
