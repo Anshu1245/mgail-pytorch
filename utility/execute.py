@@ -124,8 +124,8 @@ class Execute:
             # get next state
             action_detached = action.squeeze(0)
             action_detached = action_detached.detach().numpy()
-            action_detached = {'vector':action_detached}
             action_detached = self.denormalize(action_detached, self.er_expert.actions_mean, self.er_expert.actions_std)
+            action_detached = {'vector':action_detached}
             state_e, _, _, _ = self.env.step(action_detached)
             pov = state_e['pov']
             state_e = self.convert_to_tensors({'pov':np.expand_dims(pov, 0), 'vector':np.expand_dims(state_e['vector'], 0)})
