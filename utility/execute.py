@@ -96,7 +96,7 @@ class Execute:
     def train_p(self, obs, done):
         global r_per_ep
         global ep_count
-        
+
         self.p.train()
         total_cost = 0
         t = 0
@@ -113,9 +113,9 @@ class Execute:
         state = self.convert_to_tensors({'pov':np.expand_dims(pov, 0), 'vector':np.expand_dims(state['vector'], 0)})
         state = self.wrap(state)   # .squeeze(0)
         
+        # print("accumulating gradients")
         # Accumulate the (noisy) adversarial gradient
         for i in range(self.config.policy_accum_steps):
-            print("accumulating gradients")
             # accumulate AL gradient
             
             mu = self.p(state)
@@ -133,6 +133,7 @@ class Execute:
             action_detached = self.denormalize(action_detached, self.er_expert.actions_mean, self.er_expert.actions_std)
             action_detached = {'vector':action_detached}
             state_e, r, done, _ = self.env.step(action_detached)
+            print(r)
             r_per_ep.append(r)
             if done:
                 ep_count += 1
@@ -232,7 +233,6 @@ class Execute:
             done = True
             print('collecting initial experience')
             obs, done = self.collect_experience(None, start_at_zero=done)
-            print(obs)
             
 
         
@@ -252,7 +252,6 @@ class Execute:
                     obs, done = self.train_p(obs, done)
 
                 if self.itr % self.config.collect_experience_interval == 0:
-                    print(obs)
                     obs, done = self.collect_experience(obs, start_at_zero=done, n_steps=self.config.n_steps_train)
 
                 # switch discriminator-policy
