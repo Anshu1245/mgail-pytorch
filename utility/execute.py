@@ -6,6 +6,12 @@ import torch
 import torch.nn as nn
 import sys
 import numpy as np
+import statistics
+
+global r_per_ep
+global ep_count 
+r_per_ep = []
+ep_count = 0
 
 class Execute:
     def __init__(self, env, config):
@@ -52,9 +58,6 @@ class Execute:
         states = self.convert_to_tensors(exp_batch.states)
         actions = self.convert_to_tensors(exp_batch.actions)
         states_ = self.convert_to_tensors(exp_batch.next_states)
-        if not count:
-            print(states['pov'].shape)
-            count = 1
         s = self.wrap(states)
         s_ = self.wrap(states_)
         actions = self.normalize(actions, self.er_expert.actions_mean, self.er_expert.actions_std)
@@ -91,6 +94,9 @@ class Execute:
 
 
     def train_p(self, obs, done):
+        global r_per_ep
+        global ep_count
+        
         self.p.train()
         total_cost = 0
         t = 0
@@ -126,7 +132,14 @@ class Execute:
             action_detached = action_detached.detach().numpy()
             action_detached = self.denormalize(action_detached, self.er_expert.actions_mean, self.er_expert.actions_std)
             action_detached = {'vector':action_detached}
-            state_e, _, _, _ = self.env.step(action_detached)
+            state_e, r, done, _ = self.env.step(action_detached)
+            r_per_ep.append(r)
+            if done:
+                ep_count += 1
+                print('average reward for the {}th episode is {}'.format(ep_count, statistics.mean(r_per_ep)))
+                r_per_ep = []
+
+            obs = state_e
             pov = state_e['pov']
             state_e = self.convert_to_tensors({'pov':np.expand_dims(pov, 0), 'vector':np.expand_dims(state_e['vector'], 0)})
             state_e = self.wrap(state_e).squeeze(0)
@@ -141,14 +154,15 @@ class Execute:
 
         self.p.train_(total_cost, self.p.parameters())
         print("training policy")
-        return state
+        return obs, done
 
             
         
     
     
     def collect_experience(self, obs, record=1, vis=0, n_steps=None, noise_flag=True, start_at_zero=True):
-
+        global r_per_ep
+        global ep_count
         with torch.no_grad():
             self.p.eval()
             # environment initialization point
@@ -174,7 +188,6 @@ class Execute:
                 if not noise_flag:
                     drop = 0.
                 
-                print(observation0)
                 pov = observation0['pov']
                 state = self.convert_to_tensors({'pov':np.expand_dims(pov, 0), 'vector':np.expand_dims(observation0['vector'], 0)})
                 state = self.wrap(state).squeeze(0)
@@ -187,6 +200,11 @@ class Execute:
                 action_add = a
                 a = {'vector':a}
                 observation, reward, done, _ = self.env.step(a)
+                r_per_ep.append(reward)
+                if done:
+                    ep_count += 1
+                    print('average reward for the {}th episode is {}'.format(ep_count, statistics.mean(r_per_ep)))
+                    r_per_ep = []
                 status = done
                 done = done or t > n_steps
                 t += 1
@@ -214,6 +232,7 @@ class Execute:
             done = True
             print('collecting initial experience')
             obs, done = self.collect_experience(None, start_at_zero=done)
+            print(obs)
             
 
         
@@ -230,7 +249,7 @@ class Execute:
                 if self.discriminator_policy_switch:
                     self.train_d()
                 else:
-                    obs = self.train_p(obs, done)
+                    obs, done = self.train_p(obs, done)
 
                 if self.itr % self.config.collect_experience_interval == 0:
                     print(obs)
